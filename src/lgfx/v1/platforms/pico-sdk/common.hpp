@@ -25,6 +25,7 @@ Porting for RP2040:
 #include "../../../utility/result.hpp"
 
 #include "pico/stdlib.h"
+#include <pico/platform.h>
 
 namespace lgfx
 {

@@ -88,5 +88,11 @@ Contributors:
 
 #include "arduino_default/Bus_SPI.hpp"
 
+#elif defined (PICO_SDK_PLATFORM)
+
+#include "pico-sdk/Light_PWM.hpp"
+#include "pico-sdk/Bus_I2C.hpp"
+#include "pico-sdk/Bus_SPI.hpp"
+
 #endif
 

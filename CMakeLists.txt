@@ -75,6 +75,7 @@ elseif(${LOVYANGFX} STREQUAL "PICO-SDK")
         pico_stdlib
         hardware_i2c
         hardware_spi
+        hardware_dma
     )
 
 else()

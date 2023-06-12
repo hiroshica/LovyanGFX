@@ -20,7 +20,7 @@ Porting for RP2040:
 /----------------------------------------------------------------------------*/
 #pragma once
 
-#include <Arduino.h> 
+#include "pico/stdlib.h"
 #include <hardware/spi.h>
 
 #include <hardware/structs/dma.h>
