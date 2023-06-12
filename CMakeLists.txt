@@ -49,6 +49,8 @@ if(${LOVYANGFX} STREQUAL "ESP-IDF")
 elseif(${LOVYANGFX} STREQUAL "PICO-SDK")
     message(STATUS "LovyanGFX is build pico-sdk")
 
+    add_definitions(-DPICO_SDK_PLATFORM)
+
     file(GLOB SRCS
     src/lgfx/Fonts/efont/*.c
     src/lgfx/Fonts/IPA/*.c

@@ -49,6 +49,10 @@ Contributors:
 
 #include "arduino_default/common.hpp"
 
+#elif defined (PICO_SDK_PLATFORM)
+
+#include "pico-sdk/common.hpp"
+
 #elif __has_include(<opencv2/opencv.hpp>)
 
 #include "opencv/common.hpp"

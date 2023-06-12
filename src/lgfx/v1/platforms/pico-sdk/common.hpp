@@ -24,13 +24,7 @@ Porting for RP2040:
 #include "../../misc/enum.hpp"
 #include "../../../utility/result.hpp"
 
-#if defined ( CONFIG_ARCH_BOARD_SPRESENSE )
-#include <stdlib.h>
-#else
-#include <malloc.h>
-#endif
-
-#include <Arduino.h>
+#include "pico/stdlib.h"
 
 namespace lgfx
 {
@@ -41,22 +35,22 @@ namespace lgfx
   __attribute__ ((unused))
   static inline unsigned long millis(void)
   {
-    return ::millis();
+    return to_ms_since_boot(get_absolute_time());;
   }
   __attribute__ ((unused))
   static inline unsigned long micros(void)
   {
-    return ::micros();
+    return time_us_64();
   }
   __attribute__ ((unused))
   static inline void delay(unsigned long milliseconds)
   {
-    ::delay(milliseconds);
+    busy_wait_ms(milliseconds);
   }
   __attribute__ ((unused))
   static void delayMicroseconds(unsigned int us)
   {
-    ::delayMicroseconds(us);
+    busy_wait_us_32(us);
   }
 
   static inline void* heap_alloc(      size_t length) { return malloc(length); }
@@ -66,7 +60,7 @@ namespace lgfx
 
   static inline void gpio_hi(uint32_t pin) { sio_hw->gpio_set = 1 << pin; }
   static inline void gpio_lo(uint32_t pin) { sio_hw->gpio_clr = 1 << pin; }
-  static inline bool gpio_in(uint32_t pin) { return digitalRead(pin); }
+  static inline bool gpio_in(uint32_t pin) { return gpio_get(pin); }
 
   enum pin_mode_t
   { output
