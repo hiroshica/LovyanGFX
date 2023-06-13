@@ -489,11 +489,13 @@ namespace lgfx
  }
 }
 
+#ifndef PICO_SDK_PLATFORM
 namespace fonts
 {
   using namespace lgfx::v1::fonts;
 }
 using namespace fonts;
+#endif
 
 #ifndef _GFXFONT_H_
 #define _GFXFONT_H_
