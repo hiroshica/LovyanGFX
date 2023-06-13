@@ -7,7 +7,7 @@
 static LGFX lcd;
 
 static std::vector<int> points[LINE_COUNT];
-static int colors[] = { TFT_RED, TFT_GREEN, TFT_BLUE, TFT_CYAN, TFT_MAGENTA, TFT_YELLOW };
+static int local_colors[] = { TFT_RED, TFT_GREEN, TFT_BLUE, TFT_CYAN, TFT_MAGENTA, TFT_YELLOW };
 static int xoffset, yoffset, point_count;
 
 int getBaseColor(int x, int y)
@@ -83,7 +83,7 @@ void loop(void)
     for (int i = 0; i < LINE_COUNT; i++)
     {
       int y = points[i][index1];
-      lcd.writePixel(x, y + yoffset, colors[i]);
+      lcd.writePixel(x, y + yoffset, local_colors[i]);
     }
   }
   lcd.endWrite();

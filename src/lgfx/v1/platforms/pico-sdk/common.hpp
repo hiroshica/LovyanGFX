@@ -24,8 +24,11 @@ Porting for RP2040:
 #include "../../misc/enum.hpp"
 #include "../../../utility/result.hpp"
 
+#include <math.h>
 #include "pico/stdlib.h"
 #include <pico/platform.h>
+
+#define PI M_PI
 
 namespace lgfx
 {

@@ -17,8 +17,9 @@ static float zoom;                      // 表示倍率
 
 void setup(void)
 {
+#ifndef PICO_SDK_PLATFORM
   Serial.begin(115200);
-
+#endif
   lcd.init();
   int lw = std::min(lcd.width(), lcd.height());
 

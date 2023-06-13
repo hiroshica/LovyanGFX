@@ -163,9 +163,10 @@ void setup(void)
   delay(3000);
   drawGradation();
 
+#ifndef PICO_SDK_PLATFORM
   lcd.setFont(&Font2);
   lcd.setCursor(0, 0);
-
+#endif
 
   lcd.drawRect(8, 8, lcd.width() - 16, lcd.height() - 16, 0xFFFFFFU);
 
