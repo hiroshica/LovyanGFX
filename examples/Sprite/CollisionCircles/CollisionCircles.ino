@@ -245,7 +245,7 @@ void setup(void)
   lcd.begin();
   lcd.startWrite();
   lcd.setColorDepth(8);
-  if (lcd.width() < lcd.height()) lcd.setRotation(lcd.getRotation() ^ 1);
+  //if (lcd.width() < lcd.height()) lcd.setRotation(lcd.getRotation() ^ 1);
 
   auto lcd_width = lcd.width();
   auto lcd_height = lcd.height();

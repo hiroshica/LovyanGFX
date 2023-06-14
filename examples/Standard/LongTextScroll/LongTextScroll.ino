@@ -13,7 +13,7 @@ void setup(void)
   lcd.init();
 
   // 画面が横長になるように回転
-  if (lcd.width() < lcd.height()) lcd.setRotation(lcd.getRotation() ^ 1);
+  //if (lcd.width() < lcd.height()) lcd.setRotation(lcd.getRotation() ^ 1);
 
   canvas.setColorDepth(8);
   canvas.setFont(&fonts::lgfxJapanMinchoP_32);

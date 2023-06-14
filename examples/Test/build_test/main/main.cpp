@@ -220,6 +220,7 @@ void loop(void)
 
 
 
+#ifndef PICO_SDK_PLATFORM
 #if !defined ARDUINO
 extern "C" {
   void loopTask(void*)
@@ -235,5 +236,6 @@ extern "C" {
   }
 
 }
+#endif
 #endif
 
